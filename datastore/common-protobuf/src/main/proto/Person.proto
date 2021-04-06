@@ -1,0 +1,12 @@
+//指定 protobuf 的版本，如果没有指定默认使用 proto2，必须是.proto文件的除空行和注释内容之外的第一行
+syntax = "proto3";
+
+option java_package = "com.yjc.datastore.protobuf";
+option java_outer_classname = "PersonProtos";
+
+message Person {
+    // 格式：字段类型 + 字段名称 + 字段编号
+    string name = 1;
+    int32 age = 2;
+    bool isMale = 3;
+}
