@@ -1,3 +1,4 @@
+include ':kotlin'
 include ':datastore:common-protobuf'
 include ':datastore'
 include ':app'
