@@ -1,9 +1,7 @@
-package com.yjc.jetpacklearn
+package com.yjc.viewbinding
 
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import com.yjc.viewbinding.TestViewBindingFragment
 import com.yjc.viewbinding.databinding.ActivityTestViewbindingBinding
 
 /**
@@ -27,11 +25,16 @@ class TestViewBindingActivity : AppCompatActivity() {
         binding.image.setImageResource(R.mipmap.ic_launcher)
         binding.button.setOnClickListener {
             Log.d(TAG, "click button!")
-        }*/
+        }
+        binding.content.isVisible = true*/
 
         supportFragmentManager
             .beginTransaction()
-            .add(binding.container.id, TestViewBindingFragment(), TestViewBindingFragment::class.simpleName)
+            .add(
+                binding.container.id,
+                TestViewBindingFragment(),
+                TestViewBindingFragment::class.simpleName
+            )
             .commit()
     }
 
