@@ -10,36 +10,25 @@
 
         <import type="java.util.List" />
 
+        <import type="com.yjc.databinding.bean.User" />
+
         <variable
             name="list"
-            type="List&lt;String>" />
+            type="List&lt;User>" />
+
+        <variable
+            name="presenter"
+            type="com.yjc.databinding.Presenter" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/tv_first_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@{user.firstName}"
-            android:visibility="gone"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/tv_last_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="@{user.lastName}"
-            android:visibility="gone"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_first_name" />
+        <include
+            layout="@layout/layout_name"
+            app:layout_constraintTop_toTopOf="parent"
+            app:user="@{user}" />
 
         <EditText
             android:id="@+id/et_input"
@@ -58,6 +47,15 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/et_input" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{(view) -> presenter.onClick(view, true)}"
+            android:text="click"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -18,6 +18,6 @@ class TestDataBindingActivity : AppCompatActivity() {
         val binding: ActivityTestDataBindingBinding =
             DataBindingUtil.setContentView(this, R.layout.activity_test_data_binding)
         binding.user = User("jiacheng", "yin")
-
+        binding.presenter = Presenter()
     }
 }
