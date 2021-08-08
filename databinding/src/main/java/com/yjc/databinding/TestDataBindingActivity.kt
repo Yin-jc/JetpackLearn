@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.yjc.databinding.bean.User
-import com.yjc.databinding.databinding.ActivityTestDataBindingBinding
+import com.yjc.databinding.databinding.TestDataBinding
 
 /**
  * author: yinjiacheng
@@ -15,9 +15,11 @@ class TestDataBindingActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val binding: ActivityTestDataBindingBinding =
-            DataBindingUtil.setContentView(this, R.layout.activity_test_data_binding)
+        val binding: TestDataBinding = DataBindingUtil.setContentView(this, R.layout.activity_test_data_binding)
+//        val binding: TestDataBinding = TestDataBinding.inflate(layoutInflater)
+//        setContentView(binding.root)
         binding.user = User("jiacheng", "yin")
         binding.presenter = Presenter()
+        binding.executePendingBindings()
     }
 }
