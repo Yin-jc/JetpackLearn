@@ -1,7 +1,7 @@
 include ':databinding'
 include ':viewbinding'
 include ':kotlin'
-include ':datastore:common-protobuf'
-include ':datastore'
+//include ':datastore:common-protobuf'
+//include ':datastore'
 include ':app'
 rootProject.name = "JetpackLearn"

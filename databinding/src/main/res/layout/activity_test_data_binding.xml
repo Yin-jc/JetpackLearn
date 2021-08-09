@@ -2,8 +2,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <data
-        class="TestDataBinding">
+    <data class="TestDataBinding">
 
         <variable
             name="user"
@@ -20,6 +19,9 @@
         <variable
             name="presenter"
             type="com.yjc.databinding.Presenter" />
+
+        <import type="android.graphics.Color" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -50,13 +52,24 @@
             app:layout_constraintTop_toBottomOf="@id/et_input" />
 
         <Button
+            android:id="@+id/button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@{Color.RED}"
             android:onClick="@{(view) -> presenter.onClick(view, true)}"
-            android:text="click"
+            android:padding="@{200}"
+            android:text="@string/app_name"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="@={user.check}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/button"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
